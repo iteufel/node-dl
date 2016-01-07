@@ -1,0 +1,19 @@
+{
+  "name": "node-dl",
+  "version": "0.0.2",
+  "description": "Simple nodejs downloader",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "repository" : { 
+    "type" : "git",
+    "url" : "https://github.com/iteufel/node-dl"
+  }
+  "dependencies": {
+    "request": "^2.67.0",
+    "upath": "^0.1.6"
+  }
+}
