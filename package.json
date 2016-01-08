@@ -1,6 +1,6 @@
 {
   "name": "node-dl",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple nodejs downloader",
   "main": "index.js",
   "scripts": {

@@ -33,7 +33,6 @@ function Download(options) {
   }
   this.options = {headers:{}}
   this.request = null
-  this.done = false
   if (typeof options.path == "string")
     this.path = options.path
   else {
@@ -45,6 +44,9 @@ function Download(options) {
     }
   })
   this.stop = function () {}
+  Object.defineProperty(this, "done", {get:function () {
+    return (this.size.downloaded == this.size.estimated)
+  }})
 }
 
 util.inherits( Download, events.EventEmitter );
@@ -102,8 +104,7 @@ Download.prototype.start = function () {
           self.size.downloaded = stat.size
         }catch(e){self.size.downloaded = 0}
       }
-      if (self.size.downloaded == parseInt(response.headers["content-length"])) {
-        self.done = true
+      if (parseInt(response.headers["content-length"]) == ) {
         self.emit("end")
       }else {
         self._download()
@@ -143,4 +144,4 @@ Download.prototype._download = function () {
   self.emit("start",null)
 }
 
-exports.Download = Download;
+module.exports = Download

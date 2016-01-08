@@ -4,7 +4,7 @@ node-dl is a simple file downloader with resuming support.
 
 
 
-	var Download = require("node-dl").download
+	var Download = require("node-dl")
   
 	var dl = new Download({url:"..."})
 		.on("start",function () {
