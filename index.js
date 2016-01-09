@@ -104,7 +104,7 @@ Download.prototype.start = function () {
           self.size.downloaded = stat.size
         }catch(e){self.size.downloaded = 0}
       }
-      if (parseInt(response.headers["content-length"]) == ) {
+      if (parseInt(response.headers["content-length"]) == self.size.downloaded) {
         self.emit("end")
       }else {
         self._download()
